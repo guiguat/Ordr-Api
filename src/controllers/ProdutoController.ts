@@ -18,6 +18,7 @@ class ProdutoController{
                message: "Cadastro concluido!"
          });
       } catch (error) {
+         
          next(error);
       }
 
