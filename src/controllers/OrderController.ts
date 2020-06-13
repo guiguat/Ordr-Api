@@ -14,9 +14,8 @@ class OrderController{
     async create(req:Request,res:Response, next:NextFunction){
 
         try {
-
             const { table, orders, user } = req.body;
-        
+            let mapError = null;
             orders.map(async (order:Order) => {
                 if(order.type == 'dish'){
                     await knex('order').insert({
@@ -31,7 +30,12 @@ class OrderController{
                         user
                     })
                 }
+                else{
+                    mapError = true;
+                }
             })
+
+            if(mapError) throw new Error("Product type undefined");
             
             return res.json({ 
                 message_pt: "Pedido enviado com sucesso!",
