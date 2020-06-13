@@ -3,11 +3,13 @@ import express from 'express';
 import ProductController from './controllers/ProductController';
 import OrderController from './controllers/OrderController';
 import ReportController from './controllers/ReportController';
+import EmployeeController from './controllers/EmployeeController';
 
 const routes = express.Router();
 const productController = new ProductController();
 const orderController = new OrderController();
 const reportController = new ReportController();
+const employeeController = new EmployeeController();
 
 //products
 routes.get('/product', productController.index);
@@ -26,9 +28,9 @@ routes.get('/report', reportController.index);
 routes.post('/report', reportController.open);
 routes.put('/report', reportController.add);
 
-// // Funcionario
-// routes.delete('/funcionario', funcionarioController.delete);
-// routes.get('/funcionario', funcionarioController.index);
+// employee
+routes.delete('/employee', employeeController.delete);
+routes.get('/employee', employeeController.index);
 
 // // Contas
 // routes.get('/contas', contasController.index);
