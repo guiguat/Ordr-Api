@@ -2,10 +2,12 @@ import express from 'express';
 
 import ProdutoController from './controllers/ProdutoController';
 import PedidoController from './controllers/PedidoController';
+import RelatorioController from './controllers/RelatorioController';
 
 const routes = express.Router();
 const produtoController = new ProdutoController();
 const pedidoController = new PedidoController();
+const relatorioController = new RelatorioController();
 
 //produtos
 routes.get('/produto', produtoController.index);
@@ -19,10 +21,10 @@ routes.post('/pedido', pedidoController.create);
 routes.get('/pedido', pedidoController.index);
 routes.delete('/pedido', pedidoController.delete);
 
-// //relatorio
-// routes.get('/relatorio', relatorioController.index);
-// routes.post('/relatorio', relatorioController.abrir);
-// routes.put('/relatorio', relatorioController.add);
+//relatorio
+routes.get('/relatorio', relatorioController.index);
+routes.post('/relatorio', relatorioController.abrir);
+routes.put('/relatorio', relatorioController.add);
 
 // // Funcionario
 // routes.delete('/funcionario', funcionarioController.delete);
