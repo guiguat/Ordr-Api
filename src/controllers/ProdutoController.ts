@@ -3,7 +3,7 @@ import { Request, Response, NextFunction } from 'express';
 class ProdutoController{
 
    async create(req:Request,res:Response, next:NextFunction){
-      
+
       const { nome, preco, estoque, tipo } = req.body;
       try {
          
@@ -74,5 +74,6 @@ class ProdutoController{
       }
 
    }
+   
 }
 export default ProdutoController;
