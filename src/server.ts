@@ -13,7 +13,8 @@ app.use(routes);
 app.use((error:ResponseError, req:Request, res:Response, next:NextFunction)=>{
     res.status(error.status || 500);
     res.json({
-        message: "Ocorreu um erro ao completar ação, tente novamente.",
+        message_pt: "Ocorreu um erro ao completar ação, tente novamente.",
+        message: "An error occurred, please try again.",
         error: error.message
     });
 })

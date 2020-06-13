@@ -1,30 +1,30 @@
 import express from 'express';
 
-import ProdutoController from './controllers/ProdutoController';
-import PedidoController from './controllers/PedidoController';
-import RelatorioController from './controllers/RelatorioController';
+import ProductController from './controllers/ProductController';
+import OrderController from './controllers/OrderController';
+import ReportController from './controllers/ReportController';
 
 const routes = express.Router();
-const produtoController = new ProdutoController();
-const pedidoController = new PedidoController();
-const relatorioController = new RelatorioController();
+const productController = new ProductController();
+const orderController = new OrderController();
+const reportController = new ReportController();
 
-//produtos
-routes.get('/produto', produtoController.index);
-routes.post('/produto', produtoController.create);
-routes.put('/produto', produtoController.edit);
-routes.put('/produto/estoque', produtoController.estoque);
-routes.delete('/produto', produtoController.delete);
+//products
+routes.get('/product', productController.index);
+routes.post('/product', productController.create);
+routes.put('/product', productController.edit);
+routes.put('/product/stock', productController.stock);
+routes.delete('/product', productController.delete);
 
-//pedido
-routes.post('/pedido', pedidoController.create);
-routes.get('/pedido', pedidoController.index);
-routes.delete('/pedido', pedidoController.delete);
+//order
+routes.post('/order', orderController.create);
+routes.get('/order', orderController.index);
+routes.delete('/order', orderController.delete);
 
-//relatorio
-routes.get('/relatorio', relatorioController.index);
-routes.post('/relatorio', relatorioController.abrir);
-routes.put('/relatorio', relatorioController.add);
+//report
+routes.get('/report', reportController.index);
+routes.post('/report', reportController.open);
+routes.put('/report', reportController.add);
 
 // // Funcionario
 // routes.delete('/funcionario', funcionarioController.delete);
