@@ -74,7 +74,9 @@ class ProductController{
    async stock(req:Request,res:Response, next:NextFunction){
 
       try {
-         const { id, stock } = req.body;
+         let { id, stock } = req.body;
+         const [previousStock] = await knex('product').where({id}).select("stock");
+         stock += previousStock.stock;
          await knex('product').where({id}).update({ stock });
          res.json({
             message_pt:"Produto estocado com sucesso!",
