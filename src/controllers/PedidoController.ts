@@ -32,6 +32,8 @@ class PedidoController{
                     })
                 }
             })
+            
+            return res.json({ message: "Pedido enviado!" });
 
         } catch (error) {
             next(error);
