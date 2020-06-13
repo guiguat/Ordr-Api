@@ -1,10 +1,11 @@
 import express from 'express';
 
 import ProdutoController from './controllers/ProdutoController';
-
+import PedidoController from './controllers/PedidoController';
 
 const routes = express.Router();
 const produtoController = new ProdutoController();
+const pedidoController = new PedidoController();
 
 //produtos
 routes.get('/produto', produtoController.index);
@@ -13,10 +14,10 @@ routes.put('/produto', produtoController.edit);
 routes.put('/produto/estoque', produtoController.estoque);
 routes.delete('/produto', produtoController.delete);
 
-// //pedido
-// routes.post('/pedido', pedidoController.create);
-// routes.get('/pedido', pedidoController.index);
-// routes.delete('/pedido', pedidoController.delete);
+//pedido
+routes.post('/pedido', pedidoController.create);
+routes.get('/pedido', pedidoController.index);
+routes.delete('/pedido', pedidoController.delete);
 
 // //relatorio
 // routes.get('/relatorio', relatorioController.index);
