@@ -5,8 +5,6 @@ class RelatorioController{
 
     async abrir(req:Request,res:Response, next:NextFunction){
 
-        const { nome, preco, estoque, tipo } = req.body;
-
         try {
 
             let debito = 0.00, credito = 0.00, dinheiro = 0.00, total = 0.00;
