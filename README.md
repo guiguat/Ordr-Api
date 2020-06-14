@@ -31,7 +31,7 @@ To use the database you will need to run the migrations:
 npm run knex:migrate
 ```
 
-:+1: **After that you can run the server locally for development:**
+**After that you can run the server locally for development: :+1:**
 ```bash
 npm run dev
 ```
