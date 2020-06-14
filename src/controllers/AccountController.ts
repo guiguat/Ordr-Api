@@ -12,7 +12,7 @@ class AccountController{
 
         try {
 
-            const costumer = req.query.costumer;
+            const costumer = req.query.costumer_id;
             
             const orders = await knex('account').where({costumer}).select('*');
             
@@ -27,13 +27,13 @@ class AccountController{
     async create(req:Request, res:Response, next:NextFunction){
 
         try {
-            const { products, costumer } = req.body;
-            products.foreach(async (product:Product) => {
+            const { products, costumer_id } = req.body;
+            products.map(async (product:Product) => {
 
                 await knex('account').insert({
                     order:product.name,
                     price:product.price,
-                    costumer
+                    costumer:costumer_id
                 })
 
             })
