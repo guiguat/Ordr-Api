@@ -5,6 +5,7 @@ import OrderController from './controllers/OrderController';
 import ReportController from './controllers/ReportController';
 import EmployeeController from './controllers/EmployeeController';
 import AccountController from './controllers/AccountController';
+import CostumerController from './controllers/CostumerController';
 
 const routes = express.Router();
 const productController = new ProductController();
@@ -12,6 +13,7 @@ const orderController = new OrderController();
 const reportController = new ReportController();
 const employeeController = new EmployeeController();
 const accountController = new AccountController();
+const costumerController = new CostumerController();
 
 //products
 routes.get('/product', productController.index);
@@ -39,11 +41,11 @@ routes.get('/account', accountController.index);
 routes.post('/account', accountController.create);
 routes.delete('/account', accountController.delete);
 
-// // Cliente
-// routes.get('/cliente', clienteController.index);
-// routes.post('/cliente', clienteController.create);
-// routes.put('/cliente', clienteController.edit);
-// routes.delete('/cliente', clienteController.delete);
+// costumer
+routes.get('/costumer', costumerController.index);
+routes.post('/costumer', costumerController.create);
+routes.put('/costumer', costumerController.edit);
+routes.delete('/costumer', costumerController.delete);
 
 
 export default routes;
