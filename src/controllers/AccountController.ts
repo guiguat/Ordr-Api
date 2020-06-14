@@ -33,7 +33,7 @@ class AccountController{
                 await knex('account').insert({
                     order:product.name,
                     price:product.price,
-                    costumer:costumer_id
+                    costumer_id
                 })
 
             })
