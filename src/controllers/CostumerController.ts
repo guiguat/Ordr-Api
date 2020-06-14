@@ -38,6 +38,28 @@ class CostumerController{
 
     }
 
+    async edit(req:Request, res:Response, next:NextFunction){
+
+        try {
+
+            const { id, name, document } = req.body;
+
+            await knex('costumer').where({id}).update({
+                name,
+                document
+            })
+
+            return res.json({
+                message_pt:"Informações do cliente alteradas com sucesso!",
+                message:"Costumer's data successfully changed!"
+            });
+
+        } catch (error) {
+            next(error);
+        }
+
+    }
+
     async delete(req:Request, res:Response, next:NextFunction){
 
         try {
