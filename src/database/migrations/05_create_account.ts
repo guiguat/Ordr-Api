@@ -4,7 +4,7 @@ export async function up(knex: Knex){
         table.increments('id');
         table.string('order').notNullable();
         table.float('price').notNullable();
-        table.string('costumer').notNullable();
+        table.integer('costumer_id').notNullable();
     });
 }
 export async function down(knex:Knex){

@@ -12,9 +12,9 @@ class AccountController{
 
         try {
 
-            const costumer = req.query.costumer_id;
+            const costumer_id = req.query.costumer_id;
             
-            const orders = await knex('account').where({costumer}).select('*');
+            const orders = await knex('account').where({costumer_id}).select('*');
             
             res.json(orders);
 
@@ -51,9 +51,9 @@ class AccountController{
 
         try {
 
-            const costumer = req.query.costumer;
+            const costumer_id = req.query.costumer_id;
         
-            await knex('account').where({ costumer }).delete();
+            await knex('account').where({ costumer_id }).delete();
         
             return res.json({
                 message_pt:"Pedido(s) deletado(s) com sucesso!",
