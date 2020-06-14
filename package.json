@@ -1,7 +1,7 @@
 {
-  "name": "nlw-api",
-  "version": "1.0.0",
-  "description": "api for nlw bootcamp",
+  "name": "Ordr-Api",
+  "version": "2.0.0",
+  "description": "Api for ORDR application",
   "main": "server.js",
   "scripts": {
     "dev": "ts-node-dev --ignore-watch node_modules src/server.ts",
@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/guiguat/Ordr-Api#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "knex": "^0.21.1",
