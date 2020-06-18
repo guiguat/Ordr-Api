@@ -1,13 +1,13 @@
 <p align="center">
   <img src="https://github.com/guiguat/ORDR/blob/master/assets/icon.png" alt="ORDR" style="max-width:100%" width="60"></img>
 </p>
-<h1 align="center">ORDR - Order Management System</h1>
+<h1 align="center">Ordr - Order Management System</h1>
 <p align="center">
-  ORDR is a fullstack application made with love, Nodejs, React-Native, C# and TypeScript that helps restaurants and employees to sell faster, easily communicate with the kitchen and log all the information about daily revenue of the restaurant.
+  Ordr is a fullstack application made with love, Nodejs, React-Native, C# and TypeScript that helps restaurants and employees to sell faster, easily communicate with the kitchen and log all the information about daily revenue of the restaurant.
 </p>
 
 # Changes
-This repository is a refatoring and transcription, to TypeScript, of the old [ORDR](https://github.com/guiguat/ORDR) API, that have some issues and bugs now solved and also this API is now fully in english for more accessibility
+This repository is a refatoring and transcription, to TypeScript, of the old [Ordr](https://github.com/guiguat/ORDR) API, that have some issues and bugs now solved and also this API is now fully in english for more accessibility
 
 # Installation
 
