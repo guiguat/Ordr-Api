@@ -14,8 +14,10 @@ class ReportController{
                 cash,
                 total
             })
-            const reports = await knex('report').orderBy('dateTime', 'desc');
-            return res.json(reports); 
+            return res.json({
+                message_pt:"Relatório aberto com sucesso!",
+                message:"Report successfully opened!"
+            }); 
 
         } catch (error) {
 
