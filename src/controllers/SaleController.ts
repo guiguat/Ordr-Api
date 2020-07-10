@@ -19,8 +19,7 @@ class SaleController{
             await knex('sale').insert({
                 products:productsJson, 
                 costumer_id,
-                seller_name,
-                date_time:Date.now()
+                seller_name
             })
             return res.json({
                 message_pt:"Venda criada com sucesso!",

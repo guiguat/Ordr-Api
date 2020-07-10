@@ -5,7 +5,7 @@ export async function up(knex: Knex){
         table.text('products').notNullable();
         table.integer('costumer_id');
         table.string('seller_name').notNullable();
-        table.dateTime('date_time').notNullable()
+        table.dateTime('date_time').defaultTo(knex.fn.now())
     });
 }
 export async function down(knex:Knex){
