@@ -1,14 +1,6 @@
 import knex from '../database/connection';
 import { Request, Response, NextFunction } from 'express';
 
-interface Product{
-    id:number;
-    name: string;
-    price:number;
-    stock:number;
-    type:string;
-}
-
 interface Sale{
     id:number;
     products: string;
