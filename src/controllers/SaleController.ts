@@ -4,9 +4,9 @@ import { Request, Response, NextFunction } from 'express';
 interface Sale{
     id:number;
     products: string;
-    costumer_id:number;
+    table_num:number;
     seller_name:string;
-    date_time:Date
+    date_time:string
 }
 class SaleController{
 
@@ -14,11 +14,11 @@ class SaleController{
 
         try {
 
-            const { products, costumer_id, seller_name } = req.body;
+            const { products, table_num, seller_name } = req.body;
             const productsJson = JSON.stringify(products);
             await knex('sale').insert({
                 products:productsJson, 
-                costumer_id,
+                table_num,
                 seller_name
             })
             return res.json({
