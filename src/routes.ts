@@ -4,12 +4,14 @@ import ProductController from './controllers/ProductController';
 import ReportController from './controllers/ReportController';
 import AccountController from './controllers/AccountController';
 import CostumerController from './controllers/CostumerController';
+import SaleController from './controllers/SaleController';
 
 const routes = express.Router();
 const productController = new ProductController();
 const reportController = new ReportController();
 const accountController = new AccountController();
 const costumerController = new CostumerController();
+const saleController = new SaleController();
 
 //products
 routes.get('/product', productController.index);
@@ -34,5 +36,8 @@ routes.post('/costumer', costumerController.create);
 routes.put('/costumer', costumerController.edit);
 routes.delete('/costumer', costumerController.delete);
 
+// Sale
+routes.get('/sale', saleController.index);
+routes.post('/sale', saleController.create);
 
 export default routes;
