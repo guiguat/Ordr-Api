@@ -8,6 +8,13 @@ interface Product{
     stock:number;
     type:string;
 }
+
+interface Sale{
+    id:number;
+    products: string;
+    costumer_id:number;
+    seller_name:string;
+}
 class SaleController{
 
     async create(req:Request,res:Response, next:NextFunction){
@@ -37,7 +44,13 @@ class SaleController{
     async index(req:Request, res:Response, next:NextFunction){
 
         try {
-            const reports = await knex('sale');
+            const data = await knex('sale');
+            const reports = data.map((sale:Sale) =>{
+                return {
+                    ...sale,
+                    products: JSON.parse(sale.products),
+                }
+            })
             return res.json(reports);    
         } catch (error) {
             next(error);
