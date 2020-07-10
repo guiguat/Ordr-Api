@@ -6,6 +6,7 @@ interface Sale{
     products: string;
     costumer_id:number;
     seller_name:string;
+    date_time:Date
 }
 class SaleController{
 
@@ -19,6 +20,7 @@ class SaleController{
                 products:productsJson, 
                 costumer_id,
                 seller_name,
+                date_time:Date.now()
             })
             return res.json({
                 message_pt:"Venda criada com sucesso!",
@@ -36,7 +38,7 @@ class SaleController{
     async index(req:Request, res:Response, next:NextFunction){
 
         try {
-            const data = await knex('sale');
+            const data = await knex('sale').orderBy('date_time');
             const reports = data.map((sale:Sale) =>{
                 return {
                     ...sale,
