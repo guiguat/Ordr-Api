@@ -71,8 +71,8 @@ class CostumerController{
             await knex('costumer').where({id}).delete();
 
             return res.json({
-                message_pt:"Pedido(s) deletado(s) com sucesso!",
-                message:"Order(s) successfully deleted!"
+                message_pt:"Cliente(s) deletado(s) com sucesso!",
+                message:"Costumer(s) successfully deleted!"
             });
 
         } catch (error) {
