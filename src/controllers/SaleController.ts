@@ -37,7 +37,7 @@ class SaleController{
     async index(req:Request, res:Response, next:NextFunction){
 
         try {
-            const data = await knex('sale').orderBy('date_time');
+            const data = await knex('sale').orderBy('date_time', "desc");
             const reports = data.map((sale:Sale) =>{
                 return {
                     ...sale,
