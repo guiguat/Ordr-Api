@@ -98,9 +98,9 @@ class ProductController{
       try {
          
          const { products }: {products: Product[]} = req.body;
-
+         console.log(products)
          products?.forEach(async (product)=>{
-            await knex('product').where({id:product.id}).update({ stock: product.stock - 1 });
+            await knex('product').where({id:product.id}).decrement('stock', 1);
          })
 
          return res.status(200);
