@@ -18,6 +18,7 @@ routes.get('/product', productController.index);
 routes.post('/product', productController.create);
 routes.put('/product', productController.edit);
 routes.put('/product/stock', productController.stock);
+routes.put('/product/stock/discount', productController.discountStock);
 routes.delete('/product', productController.delete);
 
 //report
