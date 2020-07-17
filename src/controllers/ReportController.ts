@@ -38,11 +38,42 @@ class ReportController{
 
     }
 
-    async add(req:Request, res:Response, next:NextFunction){
+    // async add(req:Request, res:Response, next:NextFunction){
+    //     try {
+    //         let { addDebit, addCredit, addCash } = req.body;
+    //         console.log(addDebit +" "+ addCash + " "+ addCredit)
+    //         const [idMax] = await knex('report').max('id');
+    //         const [data] = await knex('report').select('*').where({id:idMax['max(`id`)']});
 
+    //         const {debit, credit, cash} = data;
+
+    //         addCash = addCash? addCash : 0; 
+    //         addDebit = addDebit? addDebit : 0; 
+    //         addCredit = addCredit? addCredit : 0; 
+            
+    //         const total = parseFloat(debit+addDebit+addCredit+credit+cash+addCash).toFixed(2);
+
+    //         await knex('report').where({id:idMax['max(`id`)']}).update({
+    //             debit:parseFloat(debit+addDebit).toFixed(2),
+    //             credit:parseFloat(credit+addCredit).toFixed(2),
+    //             cash:parseFloat(cash+addCash).toFixed(2),
+    //             total,
+    //         });
+
+    //         return res.json({
+    //             message_pt:"Venda fechada com sucesso!",
+    //             message:"Sale successfully reported!"
+    //         });
+
+    //     } catch (error) {
+    //         next(error);
+    //     }
+
+    // }
+
+    async add(addDebit:number, addCredit:number, addCash:number){
         try {
-            let { addDebit, addCredit, addCash } = req.body;
-
+            console.log(addDebit +" "+ addCash + " "+ addCredit)
             const [idMax] = await knex('report').max('id');
             const [data] = await knex('report').select('*').where({id:idMax['max(`id`)']});
 
@@ -61,13 +92,8 @@ class ReportController{
                 total,
             });
 
-            return res.json({
-                message_pt:"Venda fechada com sucesso!",
-                message:"Sale successfully reported!"
-            });
-
         } catch (error) {
-            next(error);
+            throw error;
         }
 
     }

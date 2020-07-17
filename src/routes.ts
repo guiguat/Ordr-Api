@@ -18,17 +18,14 @@ routes.get('/product', productController.index);
 routes.post('/product', productController.create);
 routes.put('/product', productController.edit);
 routes.put('/product/stock', productController.stock);
-routes.put('/product/stock/discount', productController.discountStock);
 routes.delete('/product', productController.delete);
 
 //report
 routes.get('/report', reportController.index);
 routes.post('/report', reportController.open);
-routes.put('/report', reportController.add);
 
 // account
 routes.get('/account', accountController.index);
-routes.post('/account', accountController.create);
 routes.delete('/account', accountController.delete);
 
 // costumer

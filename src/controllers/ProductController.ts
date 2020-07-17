@@ -1,5 +1,6 @@
 import knex from '../database/connection';
 import { Request, Response, NextFunction } from 'express';
+import ReportController from './ReportController';
 interface Product{
    id: number;
    name: string;
@@ -94,21 +95,24 @@ class ProductController{
 
    }
 
-   async discountStock(req:Request, res:Response, next:NextFunction){
+   async discountStock(products:Product[]){
       try {
          
-         const { products }: {products: Product[]} = req.body;
-         console.log(products)
          products?.forEach(async (product)=>{
             await knex('product').where({id:product.id}).decrement('stock', 1);
          })
 
-         return res.status(200);
-
       } catch (error) {
-         next(error);
+        throw error;
       }
    }
    
 }
+
+interface ReportData{
+   addDebit:number;
+   addCredit:number;
+   addCash:number
+}
+
 export default ProductController;

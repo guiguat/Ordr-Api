@@ -24,10 +24,9 @@ class AccountController{
 
     }
 
-    async create(req:Request, res:Response, next:NextFunction){
+    async create(products:Product[], costumer_id:number){
 
         try {
-            const { products, costumer_id } = req.body;
             products.map(async (product:Product) => {
 
                 await knex('account').insert({
@@ -37,12 +36,8 @@ class AccountController{
                 })
 
             })
-            return res.json({
-                message_pt:"Pedido(s) enviado(s) com sucesso!",
-                message:"Order(s) successfully sent!"
-            });
         } catch (error) {
-            next(error);
+            throw error;
         }
 
     }
