@@ -96,16 +96,15 @@ class ProductController{
 
    async discountStock(req:Request, res:Response, next:NextFunction){
       try {
+         
          const { products }: {products: Product[]} = req.body;
 
          products?.forEach(async (product)=>{
             await knex('product').where({id:product.id}).update({ stock: product.stock - 1 });
          })
-         
-         res.json({
-            message_pt:"Produto estocado com sucesso!",
-            message:"Product successfully stocked!"
-         });
+
+         return res.status(200);
+
       } catch (error) {
          next(error);
       }
