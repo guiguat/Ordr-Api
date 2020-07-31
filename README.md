@@ -7,7 +7,7 @@
 </p>
 
 # Changes
-This repository is a refatoring and transcription, to TypeScript, of the old [Ordr](https://github.com/guiguat/ORDR) API, that have some issues and bugs now solved and also this API is now fully in english for more accessibility
+This repository is a refactoring and transcription, to TypeScript, of the old [Ordr](https://github.com/guiguat/ORDR) API, that have some issues and bugs now solved and also this API is now fully in english for more accessibility
 
 # Installation
 
